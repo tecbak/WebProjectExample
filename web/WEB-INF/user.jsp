@@ -9,7 +9,7 @@
 <ul>
     <c:forEach var="user" items="${sessionScope.users}">
         <li>
-            ${user.name}
+            ${user}
         </li>
     </c:forEach>
 </ul>

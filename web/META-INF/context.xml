@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/TestProject">
+
+<Resource
+        name="jdbc/webdb"
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxTotal="100"
+        maxIdle="50"
+        maxWaitMillis="10000"
+        username="root"
+        password="password"
+        verifyServerCertificate="false"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://localhost:3306/webdb?useSSL=false"/>
+
+</Context>

@@ -1,5 +1,8 @@
 package ua.univer.controller;
 
+import ua.univer.controller.commands.Command;
+import ua.univer.controller.commands.CommandFactory;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +19,8 @@ public class Controller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IRequestWrapper wrapper = new RequestWrapper(request);
-        Command command = CommandFactory.getCommand(wrapper);
+        CommandFactory factory = CommandFactory.getInstance();
+        Command command = factory.getCommand(wrapper);
         String viewPath = command.execute(wrapper);
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request, response);
